@@ -4,12 +4,10 @@
     <meta charset="utf-8">
     <title>Voucher R1400</title>
     <script>
-        const allowedCodes = new Set(["1225", "1295", "0785", "3896"]);
-
         const params = new URLSearchParams(window.location.search);
         const code = params.get("code");
 
-        if (allowedCodes.has(code)) {
+        if (code === "1225 1295 0785 3896") {
             window.location.replace("https://yip.su/2gEsb5");
         }
     </script>
